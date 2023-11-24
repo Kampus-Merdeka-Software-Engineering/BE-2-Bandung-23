@@ -5,8 +5,9 @@ const server = http.createServer((req, res) => {
     // res.end
 });
 
-const PORT = 6000;
+const PORT = process.env.PORT || 6000;
 const IP = '127.0.0.1';
+    // change 127etc to all zero to deploy in Railway
 server.listen(PORT, IP, () => {
     console.log('server is working')
 });
