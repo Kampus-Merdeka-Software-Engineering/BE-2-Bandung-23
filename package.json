@@ -1,0 +1,11 @@
+{
+  "name": "be-2-bandung-23",
+  "version": "1.0.0",
+  "description": "this is backend for SeribuRasa web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "group 23",
+  "license": "ISC"
+}
