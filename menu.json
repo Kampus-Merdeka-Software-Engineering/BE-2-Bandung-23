@@ -1,0 +1,66 @@
+[
+    {
+        "menu_id": "1",
+        "menu_name": "Ayam Betutu",
+        "menu_description": "1 porsi Nasi putih + 1/4 ekor Ayam Betutu + Tumisan",
+        "menu_price": 37000,
+        "menu_category": "Makanan Bali",
+        "menu_rating": "4.9/5"
+    },
+    {
+        "menu_id": "2",
+        "menu_name": "Bubur Ase",
+        "menu_description": "1 porsi Bubur Ase",
+        "menu_price": 15000,
+        "menu_category": "Makanan Betawi",
+        "menu_rating": "4.9/5"
+    },
+    {
+        "menu_id": "3",
+        "menu_name": "Soto Lamongan",
+        "menu_description": "1 porsi Nasi putih + Soto Lamongan (daging sapi, daging ayam, atau babat) + Koya",
+        "menu_price": 27000,
+        "menu_category": "Makanan Jawa",
+        "menu_rating": "4.7/5"
+    },
+    {
+        "menu_id": "4",
+        "menu_name": "Sop Konro",
+        "menu_description": "1 porsi Nasi Putih + 1 mangkuk Sop konro berisi 2 Potongan iga sapi",
+        "menu_price": 45000,
+        "menu_category": "Makanan Makassar",
+        "menu_rating": "4.9/5"
+    },
+    {
+        "menu_id": "5",
+        "menu_name": "Asam Padeh",
+        "menu_description": "1 porsi Nasi Putih + Asam Padeh",
+        "menu_price": 25000,
+        "menu_category": "Makanan Padang",
+        "menu_rating": "4.5/5"
+    },
+    {
+        "menu_id": "6",
+        "menu_name": "Tekwan",
+        "menu_description": "1 porsi Tekwan",
+        "menu_price": 15000,
+        "menu_category": "Makanan Palembang",
+        "menu_rating": "4.4/5"
+    },
+    {
+        "menu_id": "7",
+        "menu_name": "Nasi Tutug Oncom",
+        "menu_description": "1 porsi Nasi tutug oncom + tahu + tempe goreng + ayam goreng + lalapan sayur + sambal terasi",
+        "menu_price": 23000,
+        "menu_category": "Makanan Sunda",
+        "menu_rating": "4.9/5"
+    },
+    {
+        "menu_id": "8",
+        "menu_name": "Mie Aceh",
+        "menu_description": "1 porsi Mie Aceh + Daging + Seafood + Emping + irisan Timun",
+        "menu_price": 25000,
+        "menu_category": "Makanan Aceh",
+        "menu_rating": "4.9/5"
+    },
+]
