@@ -28,7 +28,7 @@ app.all('*', (req, res) => {
 
 // server on
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`)
+    console.log(`Example app listening at https://kampus-merdeka-software-engineering.github.io/FE-2-Bandung-23/:${PORT}`)
 });
 
 
