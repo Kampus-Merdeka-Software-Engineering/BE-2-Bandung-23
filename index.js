@@ -1,143 +1,113 @@
+// import package express
 const express = require('express');
+// use express dengan cara ditampung dalam sebuah variabel "app"
 const app = express();
+// untuk latihan mengambil data dari folder data
 const fs = require('fs');
+// import cors
 const cors = require('cors');
+const { stringify } = require('querystring');
+// define port
 const port = 3000;
 
+// use cors agar bisa share resource antara FE dan BE
 app.use(cors());
+
+// use middleware agar aplikasi express bisa membaca data dari request body
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
+// contoh mmiddleware buatan sendiri
+const loggerMiddleware = (req, res, next) => {
+  const now = new Date();
+  const formattedTime = now.toLocaleDateString();
+  const method = req.method;
+  const url = req.url;
+  const status = req.statusCode;
+  console.log(`[${formattedTime}] ${method} ${url} - ${status}`);
+  next();
+};
+
+// use middleware + diterapkan di seluruh aplikasi
+app.use(loggerMiddleware);
  
 // main route
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Welcome to Website Seribu Rasa!');
 });
 
-// route bagian penawaran kami di landing page
+// route untuk penawaran kami di landing page (ini bisa diubah pake req.params atau req.query)
 app.get('/home/offer', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
+  fs.readFile('./data/menus.json', (error, data) => {
     if (error) res.send ('Gagal dalam memuat data');
     const menus = JSON.parse(data)
     res.status(200).send(menus);
   })  
 });
 
-// route side bar kategori menu di menu page (tampilan defaultnya nampilin menu random)
-app.get('/menu/category', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
+// route untuk side bar kategori menu di menu page (tampilan defaultnya menampilkan menu random)
+app.get('/menu/category/:type', (req, res) => {
+  const { type } = req.params;
+  // filter data berdasarkan menu_type yang masuk melalui query params
+  // sekarang coba-coba dulu karena belum ada database
+  fs.readFile('./data/menus.json', (error, data) => {
     if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
+    const menus = JSON.parse(data);
+    const menu = menus.find((menu) => menu.menu_type === type);
+    if (!menu) {
+      res.status(404).send('Menu not found');
+    }
     res.status(200).send(menus);
-  })  
+  });  
 });
 
-// route side bar kategori menu makanan aceh di menu page
-app.get('/menu/category/aceh', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
 
-// route side bar kategori menu makanan bali di menu page
-app.get('/menu/category/bali', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan betawi di menu page
-app.get('/menu/category/betawi', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan jawa di menu page
-app.get('/menu/category/jawa', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan makassar di menu page
-app.get('/menu/category/makassar', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan padang di menu page
-app.get('/menu/category/padang', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan palembang di menu page
-app.get('/menu/category/palembang', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu makanan sunda di menu page
-app.get('/menu/category/sunda', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar kategori menu minuman&lainnnya di page
-app.get('/menu/category/others', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route side bar artikel di menu page
-app.get('/menu/article', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
-});
-
-// route menu rekomendasi di recommendation page
+// route untuk menu rekpmendasi di recommendation page (tampilan defaultnya menampilkan top 5 menu rekomendasi)
 app.get('/recommendation', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
+  const { recommendation } = req.params;
+  // filter data berdasarkan is_recommended yang masuk melalui query params
+  // sekarang coba-coba dulu karena belum ada database
+  fs.readFile('./data/menus.json', (error, data) => {
     if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
+    const menus = JSON.parse(data);
+    const menu = menus.filter((menu) => menu.is_recommended === true);
+    if (!menu) {
+      res.status(404).send('Menu not found');
+    }
     res.status(200).send(menus);
-  })  
+  });  
 });
 
-// route form konfirmasi pesanan setelah klik konfirmasi pesanan di detail order page
-app.post('/detail-order/?orderId=123', (req, res) => {
-  fs.readFile('./menus.json', (error, data) => {
-    if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
-    res.status(200).send(menus);
-  })  
+// route untuk mengirim data form pemesanan 
+app.post('/order/form', (req, res) => {
+  // destructuring object dari request body
+  const { first_name, last_name, email, phone, address } = req.body
+  // kalo pake SQL nanti eksekusinya pake query (misal: INSERT INTO <nama tabel> dst...)
+  // skrg masukin ke json dulu aja
+  fs.readFile('./data/form-order.json', (err, data) => {
+    if (err) res.send('Gagal dalam membaca json');
+    const forms = JSON.parse(data);
+    const newForm = {
+      id: forms.length + 1,
+      first_name: first_name,
+      last_name: last_name,
+      email: email,
+      phone: phone,
+      address: address
+    };
+    // push new product ke products
+    forms.push(newForm);
+
+    fs.writeFile('./data/form-order.json', JSON.stringify(forms, "", 2),
+    (err) => {
+      if (err) res.status(400).send('Gagal dalam memasukkan data');
+      res.status(201).send({data: newForm});
+    });
+  });
 });
 
-// wrong route 
+
+// route untuk request yang tidak dikenal
 app.all('*', (req, res) => {
     res.status(404).send('404 routes not found');
 });
