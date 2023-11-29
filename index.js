@@ -6,7 +6,6 @@ const app = express();
 const fs = require('fs');
 // import cors
 const cors = require('cors');
-const { stringify } = require('querystring');
 // define port
 const port = 3000;
 
@@ -36,16 +35,22 @@ app.get('/', (req, res) => {
   res.send('Welcome to Website Seribu Rasa!');
 });
 
-// route untuk penawaran kami di landing page (ini bisa diubah pake req.params atau req.query)
-app.get('/home/offer', (req, res) => {
+// route untuk tampilan default page menu
+app.get('/menu', (req, res) => {
+  const { type } = req.params;
+  // tampilkan data secara acak
+  // sekarang coba-coba dulu karena belum ada database
   fs.readFile('./data/menus.json', (error, data) => {
     if (error) res.send ('Gagal dalam memuat data');
-    const menus = JSON.parse(data)
+    const menus = JSON.parse(data);
+    if (!menus) {
+      res.status(404).send('Menu not found');
+    }
     res.status(200).send(menus);
-  })  
+  });  
 });
 
-// route untuk side bar kategori menu di menu page (tampilan defaultnya menampilkan menu random)
+// route untuk side bar per kategori menu di menu page 
 app.get('/menu/category/:type', (req, res) => {
   const { type } = req.params;
   // filter data berdasarkan menu_type yang masuk melalui query params
@@ -53,14 +58,13 @@ app.get('/menu/category/:type', (req, res) => {
   fs.readFile('./data/menus.json', (error, data) => {
     if (error) res.send ('Gagal dalam memuat data');
     const menus = JSON.parse(data);
-    const menu = menus.find((menu) => menu.menu_type === type);
+    const menu = menus.filter((menu) => menu.menu_type === type);
     if (!menu) {
       res.status(404).send('Menu not found');
     }
-    res.status(200).send(menus);
+    res.status(200).send(menu);
   });  
 });
-
 
 // route untuk menu rekpmendasi di recommendation page (tampilan defaultnya menampilkan top 5 menu rekomendasi)
 app.get('/recommendation', (req, res) => {
@@ -74,12 +78,12 @@ app.get('/recommendation', (req, res) => {
     if (!menu) {
       res.status(404).send('Menu not found');
     }
-    res.status(200).send(menus);
+    res.status(200).send(menu);
   });  
 });
 
 // route untuk mengirim data form pemesanan 
-app.post('/order/form', (req, res) => {
+app.post('/detail-order/form', (req, res) => {
   // destructuring object dari request body
   const { first_name, last_name, email, phone, address } = req.body
   // kalo pake SQL nanti eksekusinya pake query (misal: INSERT INTO <nama tabel> dst...)

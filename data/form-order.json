@@ -14,5 +14,13 @@
     "email": "fahdilaja@gmail.com",
     "phone": "08534565333",
     "address": "Jl. Kenangan, Blok A2, Nomor 20"
+  },
+  {
+    "id": 3,
+    "first_name": "Siska",
+    "last_name": "Santi",
+    "email": "siskasanti@gmail.com",
+    "phone": "08999722003",
+    "address": "Jl. Kenangan, Blok A3, Nomor 20"
   }
 ]
