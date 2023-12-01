@@ -39,7 +39,6 @@ app.get("/", (req, res) => {
 
 // route untuk tampilan default page menu
 app.get("/menu", (req, res) => {
-  const { type } = req.params;
   // tampilkan data secara acak
   // sekarang coba-coba dulu karena belum ada database
   fs.readFile("./data/menus.json", (error, data) => {
@@ -70,7 +69,6 @@ app.get("/menu/category/:type", (req, res) => {
 
 // route untuk menu rekpmendasi di recommendation page (tampilan defaultnya menampilkan top 5 menu rekomendasi)
 app.get("/recommendation", (req, res) => {
-  const { recommendation } = req.params;
   // filter data berdasarkan is_recommended yang masuk melalui query params
   // sekarang coba-coba dulu karena belum ada database
   fs.readFile("./data/menus.json", (error, data) => {
