@@ -35,6 +35,6 @@ app.all("*", async (req, res) => {
   res.status(404).send("Routes you're looking is not found");
 });
 
-app.listen(PORT, "0.0.0.0" () => {
-  console.log(`Server is already runnit at ${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is already running at ${PORT}`);
 });
