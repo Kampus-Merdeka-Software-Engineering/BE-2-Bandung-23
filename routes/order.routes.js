@@ -1,6 +1,6 @@
 const express = require("express");
 const orderRoutes = express.Router();
-const { prisma } = require("../config/prisma");
+const { prisma } = require("../config");
 
 // create order
 orderRoutes.post("/", async (req, res) => {

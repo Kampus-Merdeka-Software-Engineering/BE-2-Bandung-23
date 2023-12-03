@@ -1,6 +1,6 @@
 const express = require("express");
 const recommendationRoutes = express.Router();
-const { prisma } = require("../config/prisma");
+const { prisma } = require("../config");
 
 // get all recommendation
 recommendationRoutes.get("/", async (req, res) => {

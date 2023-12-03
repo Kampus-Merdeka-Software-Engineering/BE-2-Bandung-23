@@ -1,6 +1,6 @@
 const express = require("express");
 const menuRoutes = express.Router();
-const { prisma } = require("../config/prisma");
+const { prisma } = require("../config");
 
 // get all menu
 menuRoutes.get("/", async (req, res) => {
