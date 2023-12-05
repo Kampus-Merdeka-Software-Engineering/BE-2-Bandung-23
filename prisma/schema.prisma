@@ -33,6 +33,7 @@ model Transaction {
   address           String      @db.Text
   menu_id           Int
   menu              Menu?       @relation(fields: [menu_id], references: [menu_id])
+  sum_menu_id       Int         
   notes_menu_id     String?     @db.Text
   subtotal          Int
   shipping_cost     Int
