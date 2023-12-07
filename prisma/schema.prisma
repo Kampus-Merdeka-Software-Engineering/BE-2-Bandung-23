@@ -21,7 +21,7 @@ model Menu {
   is_recommended    Boolean?
   is_offered        Boolean?   
   createdAt         DateTime        @default(now())
-  // transaction       Transaction[]
+  transaction       Transaction[]
 }
 
 model Transaction {
@@ -31,12 +31,12 @@ model Transaction {
   email             String
   phone             String
   address           String      @db.Text
-  // menu_id           Int
-  // menu              Menu?       @relation(fields: [menu_id], references: [menu_id])
-  // sum_menu_id       Int        
-  // notes_menu_id     String?     @db.Text
-  // subtotal          Int
-  // shipping_cost     Int
-  // total             Int
+  menu_id           Int
+  menu              Menu?       @relation(fields: [menu_id], references: [menu_id])
+  sum_menu_id       Int        
+  notes_menu_id     String     @db.Text
+  subtotal          Int
+  shipping_cost     Int
+  total             Int
   createdAt         DateTime    @default(now())
 }

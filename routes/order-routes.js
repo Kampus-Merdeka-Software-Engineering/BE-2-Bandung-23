@@ -10,11 +10,11 @@ orderRoutes.post("/", async (req, res) => {
     email,
     phone,
     address,
-    // menu_id,
-    // notes_menu_id,
-    // subtotal,
-    // shipping_cost,
-    // total,
+    menu_id,
+    notes_menu_id,
+    subtotal,
+    shipping_cost,
+    total,
   } = req.body;
   const newOrder = await prisma.transaction.create({
     data: {
