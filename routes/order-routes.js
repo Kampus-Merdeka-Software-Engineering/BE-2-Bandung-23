@@ -10,11 +10,11 @@ orderRoutes.post("/", async (req, res) => {
     email,
     phone,
     address,
-    menu_id,
-    notes_menu_id,
-    subtotal,
-    shipping_cost,
-    total,
+    // menu_id,
+    // notes_menu_id,
+    // subtotal,
+    // shipping_cost,
+    // total,
   } = req.body;
   const newOrder = await prisma.transaction.create({
     data: {
@@ -23,11 +23,11 @@ orderRoutes.post("/", async (req, res) => {
       email: req.body.email,
       phone: req.body.phone,
       address: req.body.address,
-      menu_id: parseInt(req.body.menu_id),
-      notes_menu_id: req.body.notes_menu_id,
-      subtotal: parseInt(req.body.subtotal),
-      shipping_cost: parseInt(req.body.shipping_cost),
-      total: parseInt(req.body.total),
+      // menu_id: parseInt(req.body.menu_id),
+      // notes_menu_id: req.body.notes_menu_id,
+      // subtotal: parseInt(req.body.subtotal),
+      // shipping_cost: parseInt(req.body.shipping_cost),
+      // total: parseInt(req.body.total),
     },
   });
   res.status(201).json({
