@@ -12,7 +12,7 @@ Proyek Seribu Rasa bertujuan untuk:
     Menjelajahi ragam cita rasa dari berbagai daerah di Indonesia.
     Memasyarakatkan dan melestarikan warisan kuliner Indonesia.
 
-## 🖥 Bahasa emograman yang Digunakan
+## 🖥 Bahasa Pemograman yang Digunakan
 
 Seriburasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
 
@@ -24,6 +24,7 @@ Seriburasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
 | Node.js         | Menjalankan sisi server belakang proyek.                                                       |
 | Express         | Framework Node.js yang digunakan untuk pengembangan web yang cepat.                            |
 | API             | Memungkinkan integrasi berbagai API data untuk menyediakan konten berkualitas kepada pengguna. |
+| Prisma          | Untuk membuat database.                                                                        |
 
 ## Fitur Utama
 
