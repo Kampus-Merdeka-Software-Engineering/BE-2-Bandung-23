@@ -38,4 +38,10 @@ orderRoutes.post("/", async (req, res) => {
   });
 });
 
+// get transaction_id
+orderRoutes.get("/payment", async (req, res) => {
+  const payment = await prisma.transaction.findFirst("transaction_id");
+  res.status(200).send(payment);
+});
+
 module.exports = { orderRoutes };
