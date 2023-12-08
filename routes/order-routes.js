@@ -44,6 +44,9 @@ orderRoutes.get("/payment", async (req, res) => {
     select: {
       transaction_id: true,
     },
+    orderBy: {
+      createdAt: "desc",
+    },
   });
   res.status(200).send(payment);
 });
