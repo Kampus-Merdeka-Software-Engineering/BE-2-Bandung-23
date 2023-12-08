@@ -24,7 +24,7 @@ Seribu Rasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
 | Node.js         | Menjalankan sisi server belakang proyek.                                                       |
 | Express         | Framework Node.js yang digunakan untuk pengembangan web yang cepat.                            |
 | API             | Memungkinkan integrasi berbagai API data untuk menyediakan konten berkualitas kepada pengguna. |
-| Prisma          | Untuk membuat database.                                                                        |
+| Prisma          | Membuat databases sebagai kumpulan informasi yang disimpan secara sistematik di penyimpanan.   |
 
 ## Fitur Utama
 
