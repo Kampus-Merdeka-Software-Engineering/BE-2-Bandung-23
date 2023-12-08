@@ -40,7 +40,11 @@ orderRoutes.post("/", async (req, res) => {
 
 // get transaction_id
 orderRoutes.get("/payment", async (req, res) => {
-  const payment = await prisma.transaction.findFirst("transaction_id");
+  const payment = await prisma.transaction.findFirst({
+    select: {
+      transaction_id: true,
+    },
+  });
   res.status(200).send(payment);
 });
 
