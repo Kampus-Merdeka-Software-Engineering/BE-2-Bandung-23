@@ -1,8 +1,8 @@
-# Seriburasa
+# Seribu Rasa
 
 ![App Screenshot](./images/kameha.gif)
 
-Seriburasa adalah proyek yang didedikasikan untuk menghadirkan kelezatan dan keragaman makanan khas Indonesia. Kami mengundang Anda untuk memperluas pengalaman kuliner Anda dengan menjelajahi beragam cita rasa yang khas dari nusantara.
+Seribu Rasa adalah proyek yang didedikasikan untuk menghadirkan kelezatan dan keragaman makanan khas Indonesia. Kami mengundang Anda untuk memperluas pengalaman kuliner Anda dengan menjelajahi beragam cita rasa yang khas dari nusantara.
 
 ## Tujuan
 
@@ -14,7 +14,7 @@ Proyek Seribu Rasa bertujuan untuk:
 
 ## 🖥 Bahasa Pemograman yang Digunakan
 
-Seriburasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
+Seribu Rasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
 
 | Teknologi       | Keterangan                                                                                     |
 | --------------- | ---------------------------------------------------------------------------------------------- |
