@@ -43,6 +43,8 @@ orderRoutes.get("/payment", async (req, res) => {
   const payment = await prisma.transaction.findFirst({
     select: {
       transaction_id: true,
+      first_name: true,
+      phone: true
     },
     orderBy: {
       createdAt: "desc",
