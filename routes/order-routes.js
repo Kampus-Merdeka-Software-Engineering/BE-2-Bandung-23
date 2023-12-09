@@ -44,7 +44,8 @@ orderRoutes.get("/payment", async (req, res) => {
     select: {
       transaction_id: true,
       first_name: true,
-      phone: true
+      last_name: true,
+      phone: true,
     },
     orderBy: {
       createdAt: "desc",
