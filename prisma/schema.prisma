@@ -24,11 +24,11 @@ model Menu {
 }
 
 model Transaction {
-  transaction_id    Int         @id @default(autoincrement())
+  transaction_id    Int             @id @default(autoincrement())
   first_name        String
   last_name         String
   email             String
   phone             String
-  address           String      @db.Text
-  createdAt         DateTime    @default(now())
+  address           String          @db.Text
+  createdAt         DateTime        @default(now())
 }

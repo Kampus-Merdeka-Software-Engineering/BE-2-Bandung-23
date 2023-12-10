@@ -1,6 +1,6 @@
 # Seribu Rasa
 
-![App Screenshot](./images/kameha.gif)
+![App Screenshot](./images/logo-putih.png)
 
 Seribu Rasa adalah proyek yang didedikasikan untuk menghadirkan kelezatan dan keragaman makanan khas Indonesia. Kami mengundang Anda untuk memperluas pengalaman kuliner Anda dengan menjelajahi beragam cita rasa yang khas dari nusantara.
 
@@ -28,10 +28,10 @@ Seribu Rasa menggunakan berbagai bahasa pemograman, yaitu sebagai berikut:
 
 ## Fitur Utama
 
-    Panduan Kuliner: Temukan informasi lengkap tentang hidangan khas dari berbagai provinsi di Indonesia.
-    Resep Authentic: Dapatkan resep otentik yang memungkinkan Anda untuk menciptakan hidangan khas Indonesia di rumah.
-    Kisah di Balik Hidangan: Pelajari kisah sejarah, makna budaya, dan filosofi di balik setiap hidangan.
-    Galeri Kuliner: Menyajikan galeri visual yang memukau untuk menggugah selera Anda.
+Panduan Kuliner: Temukan informasi lengkap tentang hidangan khas dari berbagai provinsi di Indonesia.
+Resep Authentic: Dapatkan resep otentik yang memungkinkan Anda untuk menciptakan hidangan khas Indonesia di rumah.
+Kisah di Balik Hidangan: Pelajari kisah sejarah, makna budaya, dan filosofi di balik setiap hidangan.
+Galeri Kuliner: Menyajikan galeri visual yang memukau untuk menggugah selera Anda.
 
 ## Bergabunglah dengan Kami
 
